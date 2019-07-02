@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.adityasharat.simpleproteusdemo"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // All Proteus dependencies
+    implementation 'com.github.flipkart-incubator.proteus:proteus-core:5.0.0'
+    implementation 'com.github.flipkart-incubator.proteus:gson-adapter:5.0.0'
+    implementation 'com.github.flipkart-incubator.proteus:cardview-v7:5.0.0'
+    implementation 'com.github.flipkart-incubator.proteus:design:5.0.0'
+    implementation 'com.github.flipkart-incubator.proteus:recyclerview-v7:5.0.0'
+    implementation 'com.github.flipkart-incubator.proteus:support-v4:5.0.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
